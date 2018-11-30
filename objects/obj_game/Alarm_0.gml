@@ -1,4 +1,4 @@
-/// @desc: Game Room alarm
+/// @description: Create new Asteroids
 // only do if we are in the game room
 if (room != rm_game) {
 	exit;
