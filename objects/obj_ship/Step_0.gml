@@ -18,8 +18,7 @@ if (keyboard_check(vk_down)) {
 if (keyboard_check_pressed(vk_space)) {
 	var bullet_inst = instance_create_layer(x, y, "Instances", obj_bullet);
 	bullet_inst.direction = image_angle;
-	// TODO: sound
-	// audio_play_sound(snd_shoot, 1, false);
+	audio_play_sound(snd_zap, 1, false);
 }
 
 move_wrap(true, true, sprite_width/2);

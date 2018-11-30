@@ -1,7 +1,6 @@
 score += 10;
 
-// TODO: sound
-// audio_play_sound(snd_hit, 1, false);
+audio_play_sound(snd_zap, 1, false);
 instance_destroy();
 
 with (other) {

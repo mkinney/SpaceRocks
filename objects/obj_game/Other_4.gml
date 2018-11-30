@@ -1,11 +1,10 @@
 if (room == rm_game) {
 	
-	// TODO: sound
 	// Restart playing song from beginning
-	// if (audio_is_playing(msc_song)) {
-	//    audio_stop_sound(msc_song);
-	// }
-	// audio_play_sound(msc_song, 2, true);
+	if (audio_is_playing(msc_song)) {
+		audio_stop_sound(msc_song);
+	}
+	audio_play_sound(msc_song, 2, true);
 	
 	// spawn asteroids away from middle part of the screen
 	repeat (6) {

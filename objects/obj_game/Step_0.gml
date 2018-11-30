@@ -14,13 +14,11 @@ if (keyboard_check_pressed(vk_enter)) {
 if (room == rm_game) {
 	if (score >= 1000.0) {
 		room_goto(rm_win);
-		// TODO: sound
-		// audio_play_sound(snd_win, 1, false);
+		audio_play_sound(snd_win, 1, false);
 	}
 
 	if (lives <= 0) {
 		room_goto(rm_gameover);
-		// TODO: sound
-		// audio_play_sound(snd_lose, 1, false);
+		audio_play_sound(snd_lose, 1, false);
 	}
 }

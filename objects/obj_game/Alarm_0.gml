@@ -1,3 +1,4 @@
+/// @desc: Game Room alarm
 // only do if we are in the game room
 if (room != rm_game) {
 	exit;
