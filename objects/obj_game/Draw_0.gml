@@ -22,6 +22,7 @@ switch (room) {
 			>> PRESS ENTER TO START <<
 			"
 		);
+		draw_text(room_width/2, 70, "Highscore:" + string(global.highscore));
 		draw_set_halign(fa_left);
 		break;
 		

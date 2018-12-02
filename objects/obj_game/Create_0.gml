@@ -5,6 +5,11 @@ draw_set_font(fnt_text);
 
 randomize();
 
+ini_open("savedata.ini");
+// get highscore from ini file (set to 0 if there was no highscore)
+global.highscore = ini_read_real("score", "highscore", 0);
+ini_close();
+
 // websites for sound:
 // - beepbox.co
 // - boscaceoil.net

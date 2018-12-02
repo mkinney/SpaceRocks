@@ -6,8 +6,23 @@ if (keyboard_check_pressed(vk_enter)) {
 			
 		case rm_win:
 		case rm_gameover:
+		
+			// save highscore
+			if (score > global.highscore) {
+				ini_open("savedata.ini");
+				ini_write_real("score", "highscore", score);
+				ini_close();
+				global.highscore = score;
+			}
 			game_restart();
 			break;
+	}
+}
+
+if (room == rm_gameover) {
+	if (keyboard_check_pressed(ord(("R")))) {
+		// reset high score
+		global.highscore = 0;
 	}
 }
 
