@@ -10,6 +10,8 @@ ini_open("savedata.ini");
 global.highscore = ini_read_real("score", "highscore", 0);
 ini_close();
 
+//gamepad_set_axis_deadzone(0, 0.7);
+
 // websites for sound:
 // - beepbox.co
 // - boscaceoil.net

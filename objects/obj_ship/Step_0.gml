@@ -1,9 +1,14 @@
-// game pad factor allows us to make the game
+// gp_factor (game pad factor) allows us to make the game
 // pad react faster than the arrow keys, if we want
+// joystick_factor is so we can respond to thrust quicker
 var gp_factor = 1;
+var joystick_factor = 2;
 
 /// LEFT
 if (keyboard_check(vk_left)) {
+	image_angle += 5;
+}
+if (gamepad_axis_value(0, gp_axislh) < -0.5) {
 	image_angle += 5;
 }
 if (gamepad_button_check(0, gp_padl)) {
@@ -14,6 +19,9 @@ if (gamepad_button_check(0, gp_padl)) {
 if (keyboard_check(vk_right)) {
 	image_angle -= 5;
 }
+if (gamepad_axis_value(0, gp_axislh) > 0.5) {
+	image_angle -= 5;
+}
 if (gamepad_button_check(0, gp_padr)) {
 	image_angle -= 5 * gp_factor;
 }
@@ -21,6 +29,9 @@ if (gamepad_button_check(0, gp_padr)) {
 /// UP
 if (keyboard_check(vk_up)) {
 	motion_add(image_angle, .05);
+}
+if (gamepad_axis_value(0, gp_axisrv) > 0.5) {
+	motion_add(image_angle, .05 * joystick_factor);
 }
 if (gamepad_button_check(0, gp_padu)) {
 	motion_add(image_angle, .05 * gp_factor);
@@ -30,9 +41,13 @@ if (gamepad_button_check(0, gp_padu)) {
 if (keyboard_check(vk_down)) {
 	motion_add(image_angle, -.05);
 }
+if (gamepad_axis_value(0, gp_axisrv) < -0.5) {
+	motion_add(image_angle, -.05 * joystick_factor);
+}
 if (gamepad_button_check(0, gp_padd)) {
 	motion_add(image_angle, -.05 * gp_factor);
 }
+
 
 /// FIRING
 // allow for first game pad any shoulder buttons
